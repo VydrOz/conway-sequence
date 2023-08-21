@@ -9,7 +9,7 @@ export class Conway {
         let result = "";
         let split = this.current.match(/(.)\1*/g);
         split.forEach(e => {
-            result += e[0] + e.length;
+            result += e.length + e[0];
         });
         
         if (result) {
