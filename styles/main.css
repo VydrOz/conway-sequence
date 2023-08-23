@@ -1,0 +1,107 @@
+:root {
+    --global-background: #1d1f21;
+    --font-color-1: #b294bb;
+    --font-color-2: #8abeb7;
+    --font-color-3: #cc6666;
+    --progress-bar-color: #f0c674;
+    --line-num-color: #969896;
+    --footer-background-color: #282b2e;
+    --footer-color: #ffffffaa;
+    --footer-color-hover: #ffffff60;
+}
+
+/* link: https://fonts.google.com/specimen/Ubuntu+Mono */
+@font-face {
+    font-family: 'Ubuntu Mono';
+    src: url(../fonts/UbuntuMono-Regular.ttf);
+}
+
+/* link: https://fonts.google.com/specimen/Courier+Prime */
+@font-face {
+    font-family: 'Courier Prime';
+    src: url(../fonts/CourierPrime-Regular.ttf);
+}
+
+body {
+    background-color: var(--global-background);
+    font-size: 14px;
+    font-family: 'Ubuntu Mono';
+}
+
+#visualizer {
+    margin-top: 1em;
+}
+
+[id^=digit-] {
+    letter-spacing: 0.04em;
+}
+
+#digit-1 {
+    color: var(--font-color-1);
+}
+
+#digit-2 {
+    color: var(--font-color-2);
+}
+
+#digit-3 {
+    color: var(--font-color-3);
+}
+
+#progess-bar {
+    position: fixed;
+    display: block;
+    top: 0;
+    right: 0;
+    left: 0;
+    width: 0%;
+    height: 5px;
+    background-color: var(--progress-bar-color);
+}
+
+footer {
+    font-family: 'Courier Prime';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: auto;
+    width: 100%;
+    color: var(--footer-color);
+    text-align: center;
+    padding-bottom: 10px;
+    font-size: 13px;
+    background-color: var(--footer-background-color);
+}
+
+footer > hr {
+    width: 60%;
+}
+
+footer > .title {
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+
+footer > a {
+    color: var(--footer-color);
+}
+
+footer > a:hover {
+    color: var(--footer-color-hover);
+}
+
+.rainbow-heart {
+    text-indent: 8px;
+    color: hsl(calc(360deg * var(--char-percent)), 90%, 65%);
+    animation: rainbow 2s linear infinite;
+    animation-delay: calc(-2s * var(--char-percent));
+}
+
+@keyframes rainbow {
+    0% { color: hsl(0turn, 90%, 65%); }
+    25% { color: hsl(.25turn, 90%, 65%); }
+    50% { color: hsl(.5turn, 90%, 65%); }
+    75% { color: hsl(.75turn, 90%, 65%); }
+    100% { color: hsl(1turn, 90%, 65%); }
+}
