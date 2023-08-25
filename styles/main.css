@@ -1,10 +1,10 @@
 :root {
     --global-background: #1d1f21;
-    --font-color-1: #b294bb;
-    --font-color-2: #8abeb7;
+    --font-color-1: #81a2be;
+    --font-color-2: #b5bd68;
     --font-color-3: #cc6666;
+    --line-number-color: #969896;
     --progress-bar-color: #f0c674;
-    --line-num-color: #969896;
     --footer-background-color: #282b2e;
     --footer-color: #ffffffaa;
     --footer-color-hover: #ffffff60;
@@ -24,70 +24,81 @@
 
 body {
     background-color: var(--global-background);
-    font-size: 14px;
     font-family: 'Ubuntu Mono';
 }
 
-#visualizer {
-    margin-top: 1em;
-}
-
-[id^=digit-] {
-    letter-spacing: 0.04em;
-}
-
-#digit-1 {
-    color: var(--font-color-1);
-}
-
-#digit-2 {
-    color: var(--font-color-2);
-}
-
-#digit-3 {
-    color: var(--font-color-3);
+html, body {
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 #progess-bar {
-    position: fixed;
-    display: block;
     top: 0;
-    right: 0;
-    left: 0;
-    width: 0%;
+    position: fixed;
     height: 5px;
     background-color: var(--progress-bar-color);
 }
 
-footer {
+#visualizer {
+    flex: 1;
+    margin: 1em 0 1em 0;
+    white-space: nowrap;
+}
+
+#visualizer > div {
+    counter-increment: line;
+}
+
+#visualizer > div::before {
+    content: counter(line);
+    color: var(--line-number-color);
+    font-size: 13px;
+    text-align: right;
+    display: inline-block;
+    width: 1.5em;
+    margin: 0 1.5em 0 .6em;
+    user-select: none;
+}
+
+[id^=digit-] {
+    font-size: 14px;
+    letter-spacing: 0.04em; 
+}
+
+#digit-1 { color: var(--font-color-1); }
+
+#digit-2 { color: var(--font-color-2); }
+
+#digit-3 { color: var(--font-color-3); }
+
+.footer {
+    flex: 0;
+    padding-bottom: 5px;
     font-family: 'Courier Prime';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: auto;
-    width: 100%;
     color: var(--footer-color);
     text-align: center;
-    padding-bottom: 10px;
     font-size: 13px;
     background-color: var(--footer-background-color);
 }
 
-footer > hr {
+.footer > hr {
     width: 60%;
 }
 
-footer > .title {
+.footer > .title {
     font-size: 15px;
-    margin-bottom: 5px;
+    padding: 3px 0 4px 0;
 }
 
-footer > a {
+.footer > a {
     color: var(--footer-color);
 }
 
-footer > a:hover {
+.footer > a:hover {
     color: var(--footer-color-hover);
 }
 
