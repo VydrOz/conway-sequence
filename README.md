@@ -1,12 +1,9 @@
 ## About
-
-### Story
 My father is a fan of the french writer [Bernard Werber](https://en.wikipedia.org/wiki/Bernard_Werber). One day, he told me about a book called "[*Le Jour des fourmis*](https://en.wikipedia.org/wiki/Le_Jour_des_fourmis)" (english: *The Day of the Ants*)  and the enigma it contained. After about 5s of searching, this enigma is called "Conway Sequence", also known as "Look and Say Sequence".
 
 I was looking for a short development project and this one came at just the right time to give me an idea : create a visualization of this sequence !
 
-### Conway Sequence
-
+## Conway Sequence
 To generate a member of the sequence from the previous member, read off the digits of the previous member, counting the number of digits in groups of the same digit.
 
 For example:
