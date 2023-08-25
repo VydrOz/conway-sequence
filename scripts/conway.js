@@ -4,7 +4,7 @@ let progressBar = document.getElementById('progess-bar');
 
 
 // variables
-let digits = [3];
+let digits = [1];
 let nextDigits = "";
 
 window.addEventListener('load', () => {
