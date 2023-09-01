@@ -18,6 +18,24 @@ For example:
 
 ![output-onlinegiftools](https://github.com/VydrOz/conway-sequence/assets/61025448/32cacc34-73b5-488a-a48a-5bf65752b169)
 
+## Extras
+
+This project include `1` easter egg  !
+
+<details>
+<summary>#1 - Spoiler</summary>
+
+> If you type "bernardwerber" (*Bernard Werber*), all the digits turn into ants. 
+> This refers to his book *Le Jour des **fourmis***".
+>
+> ![image](https://github.com/VydrOz/conway-sequence/assets/61025448/849048a3-c6dc-44ba-9a28-7eed5275182f)
+
+</details>
+
 ## Special mention
 
+Commit message inspired by Carlos Cuesta's project ; [Gitmoji](https://gitmoji.dev)
+
 Color palette from Chris Kempson's repository : [tomorrow-theme](https://github.com/chriskempson/tomorrow-theme).
+
+Easter egg script (`egg.min.js`) from Mike Flynn's repository : `` [Egg.js](https://github.com/mikeflynn/egg.js)
