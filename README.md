@@ -26,7 +26,7 @@ This project include `1` easter egg  !
 <summary>#1 - Spoiler</summary>
 
 > If you type "bernardwerber" (*Bernard Werber*), all the digits turn into ants. 
-> This refers to his book *Le Jour des **fourmis***".
+> This refers to his book "*Le Jour des **fourmis***".
 >
 > ![image](https://github.com/VydrOz/conway-sequence/assets/61025448/849048a3-c6dc-44ba-9a28-7eed5275182f)
 
