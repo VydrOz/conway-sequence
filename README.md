@@ -36,6 +36,6 @@ This project include `1` easter egg  !
 
 Commit messages inspired by Carlos Cuesta's project : [Gitmoji](https://gitmoji.dev)
 
-Color palette from Chris Kempson's repository : [tomorrow-theme](https://github.com/chriskempson/tomorrow-theme).
+Color palette from Chris Kempson's repository : [tomorrow-theme](https://github.com/chriskempson/tomorrow-theme)
 
 Easter egg script (`egg.min.js`) from Mike Flynn's repository : [Egg.js](https://github.com/mikeflynn/egg.js)
