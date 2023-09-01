@@ -34,7 +34,7 @@ This project include `1` easter egg  !
 
 ## Special mention
 
-Commit messages inspired by Carlos Cuesta's project ; [Gitmoji](https://gitmoji.dev)
+Commit messages inspired by Carlos Cuesta's project : [Gitmoji](https://gitmoji.dev)
 
 Color palette from Chris Kempson's repository : [tomorrow-theme](https://github.com/chriskempson/tomorrow-theme).
 
