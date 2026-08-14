@@ -1,3 +1,5 @@
+<img width="1280" height="640" alt="conway-sequence-banner-2" src="https://github.com/user-attachments/assets/4ed8d3a7-fd59-4c23-8d9e-79f0a413a393" />
+
 ## About
 My father is a fan of the french writer [Bernard Werber](https://en.wikipedia.org/wiki/Bernard_Werber). One day, he told me about a book called "[*Le Jour des fourmis*](https://en.wikipedia.org/wiki/Le_Jour_des_fourmis)" (english: *The Day of the Ants*)  and the enigma it contained. After about 5s of searching, this enigma is called "Conway Sequence", also known as "Look and Say Sequence".
 
