@@ -38,7 +38,8 @@ This project include `1` easter egg  !
 > This refers to his book "*Le Jour des **fourmis***".
 > The **Ants** display card remains available after unlocking it for the current page.
 >
-> ![image](https://github.com/VydrOz/conway-sequence/assets/61025448/849048a3-c6dc-44ba-9a28-7eed5275182f)
+> <img width="300" height="54" alt="image" src="https://github.com/user-attachments/assets/aa3082c5-feb8-4ce3-bbf2-c152bb204425" />
+
 
 </details>
 
