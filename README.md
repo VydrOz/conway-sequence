@@ -18,7 +18,7 @@ For example:
 
 ## Preview
 
-![output-onlinegiftools](https://github.com/VydrOz/conway-sequence/assets/61025448/32cacc34-73b5-488a-a48a-5bf65752b169)
+<img width="696" height="280" alt="firefox_rHkdCYwi98_1" src="https://github.com/user-attachments/assets/3c1d0ea4-df3e-4efd-94cc-3a86a36d469a" />
 
 ## Options
 
