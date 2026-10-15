@@ -232,6 +232,14 @@ body {
 .theme-preview i:nth-child(2) { background-color: var(--preview-2); }
 .theme-preview i:nth-child(3) { background-color: var(--preview-3); }
 
+.ant-preview {
+    width: 14px;
+    height: 18px;
+    background-color: currentColor;
+    -webkit-mask: url(../assets/ant.svg) no-repeat center / contain;
+    mask: url(../assets/ant.svg) no-repeat center / contain;
+}
+
 .controls button:disabled {
     opacity: 0.4;
     cursor: default;

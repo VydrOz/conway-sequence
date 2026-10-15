@@ -10,6 +10,11 @@ export class Miscellaneous {
     }
 
     ants() {
+        const choice = document.getElementById('ants-choice');
+        const input = choice.querySelector('input');
+        choice.hidden = false;
+        input.disabled = false;
+        input.checked = true;
         document.documentElement.dataset.display = 'ants';
     }
 
