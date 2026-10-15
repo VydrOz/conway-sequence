@@ -1,57 +1,78 @@
-import { Miscellaneous } from './miscellaneous.js'
+const visualizer = document.getElementById('visualizer');
+const progressBar = document.getElementById('progess-bar');
+const errorMessage = document.getElementById('error-message');
 
-// elements
-let visualizer = document.getElementById('visualizer');
-let progressBar = document.getElementById('progess-bar');
+let digits = ['1'];
 
-// variables
-let misc = new Miscellaneous();
-let digits = [1];
-let nextDigits = "";
-let l = (x) => x.length;
-let f = (x) => x[0];
+function createRow() {
+    const row = document.createElement('div');
+    const track = document.createElement('div');
+    const sequence = document.createElement('span');
+    track.className = 'sequence-track';
+    track.setAttribute('role', 'region');
+    track.setAttribute('aria-label', `Term ${visualizer.childElementCount + 1}`);
+    sequence.className = 'sequence';
+    track.appendChild(sequence);
+    row.appendChild(track);
+    visualizer.appendChild(row);
+    return sequence;
+}
 
-window.addEventListener('load', () => {
-    let d = document.createElement("div");
-    visualizer.appendChild(d);
-    d.innerHTML = `<span id='digit-${digits[0]}'>${digits[0]}</span>`
-    loop();
-})
+function appendDigit(sequence, digit) {
+    const span = document.createElement('span');
+    span.className = `digit digit-${digit}`;
+    span.textContent = String(digit);
+    sequence.appendChild(span);
+}
+
+async function conway(sequence, groups) {
+    const parts = [];
+
+    for (let i = 0; i < groups.length; i++) {
+        const group = groups[i];
+        const count = group.length;
+        const digit = group[0];
+        parts.push(String(count), digit);
+
+        appendDigit(sequence, count);
+        updateProgressBar(2 * i + 1, 2 * groups.length);
+        await sleep(75);
+
+        appendDigit(sequence, digit);
+        updateProgressBar(2 * i + 2, 2 * groups.length);
+        await sleep(75);
+    }
+
+    const nextGroups = parts.join('').match(/(.)\1*/g);
+    if (nextGroups === null) {
+        throw new Error('The calculation produced an empty term.');
+    }
+    return nextGroups;
+}
 
 async function loop() {
-    for (var i = 0; i < Infinity; i++) {
-        let d = document.createElement("div");
-        visualizer.appendChild(d);
+    appendDigit(createRow(), '1');
+
+    while (true) {
+        const sequence = createRow();
         updateProgressBar(0, 1);
-        await conway(d);
-        digits = nextDigits.match(/(.)\1*/g).map(Number);
-        nextDigits = "";
+        digits = await conway(sequence, digits);
         await sleep(150);
     }
 }
 
-async function conway(elem) {
-    for (let i = 0; i < digits.length; i++) {
-        let num = digits[i].toString();
-        nextDigits += num.length + num[0];
-        elem.innerHTML += `<span id='digit-${num.length}'>${l(num)}</span>`;
-        updateProgressBar(i-0.5, digits.length);
-        await sleep(75);
-        elem.innerHTML += `<span id='digit-${num[0]}'>${f(num)}</span>`
-        updateProgressBar(i, digits.length);
-        await sleep(75);
-    }
-    updateProgressBar(1, 1);
-}
-
-function updateProgressBar(val, max) {
-    progressBar.style.width = `${(val/max)*100}%`;
+function updateProgressBar(value, max) {
+    const percent = (value / max) * 100;
+    progressBar.style.width = `${percent}%`;
+    progressBar.setAttribute('aria-valuenow', String(percent));
 }
 
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-misc.addTrigger(misc.antSequence, function() {
-    if (l('x') === 1) {  l = f = misc.ants(); };
+void loop().catch((error) => {
+    console.error('Error while generating the Conway sequence:', error);
+    errorMessage.textContent = 'Generation stopped. Check the console for details.';
+    errorMessage.hidden = false;
 });

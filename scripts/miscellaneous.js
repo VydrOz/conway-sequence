@@ -1,24 +1,21 @@
-import { Egg } from './egg.min.js'
+import { Egg } from './egg.min.js';
 
-export class Miscellaneous 
-{
-    antSequence = "b,e,r,n,a,r,d,w,e,r,b,e,r";
+export class Miscellaneous {
+    antSequence = 'b,e,r,n,a,r,d,w,e,r,b,e,r';
     #egg;
 
     constructor() {
         this.#egg = new Egg();
+        this.addTrigger(this.antSequence, () => this.ants());
     }
 
     ants() {
-        let elm = '<div class="ant"></div>';
-        document.querySelectorAll('[id^="digit-"]').forEach(function(e) {
-            e.innerHTML = elm;
-        });
-    
-        return () => elm;
+        document.documentElement.dataset.display = 'ants';
     }
 
-    addTrigger(seq, funct) {
-        return this.#egg.addCode(seq, funct).listen();
+    addTrigger(sequence, callback) {
+        return this.#egg.addCode(sequence, callback).listen();
     }
 }
+
+new Miscellaneous();
