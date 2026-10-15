@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en-US">
+<html lang="en-US" data-theme="dark" data-display="numeric">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,7 +12,75 @@
     <div id="progess-bar" role="progressbar" aria-label="Term generation"
          aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"></div>
 
-    <p id="error-message" class="error-message" role="alert" hidden></p>
+    <section class="controls" aria-labelledby="controls-title">
+      <h1 id="controls-title">Options</h1>
+      <div class="control-group">
+        <div class="control-heading">
+          <label for="sequence-zoom">Zoom</label>
+          <output id="zoom-value" for="sequence-zoom">100%</output>
+          <button id="zoom-reset" class="icon-button" type="button"
+                  aria-label="Reset zoom to 100%" title="Reset zoom to 100%">↺</button>
+        </div>
+        <input id="sequence-zoom" type="range" min="25" max="200" step="25" value="100"
+               title="25% – 200%">
+      </div>
+      <div class="control-group">
+        <div class="control-heading">
+          <label for="generation-speed">Speed</label>
+          <output id="speed-value" for="generation-speed">×1</output>
+          <button id="speed-reset" class="icon-button" type="button"
+                  aria-label="Reset speed to 1x" title="Reset speed to ×1">↺</button>
+        </div>
+        <div class="range-row">
+          <input id="generation-speed" type="range" min="-2" max="2" step="1" value="0"
+                 list="speed-steps" aria-valuetext="1x (Normal)" title="×0.25 – ×4">
+          <button id="pause-generation" class="icon-button" type="button"
+                 aria-pressed="false" aria-label="Pause" title="Pause">⏸</button>
+        </div>
+        <datalist id="speed-steps">
+          <option value="-2" label="0.25x"></option>
+          <option value="-1" label="0.5x"></option>
+          <option value="0" label="1x (Normal)"></option>
+          <option value="1" label="2x"></option>
+          <option value="2" label="4x"></option>
+        </datalist>
+      </div>
+      <div id="display-mode" class="control-group inline-group"
+           role="radiogroup" aria-labelledby="display-label">
+        <span id="display-label">Display</span>
+        <div class="choice-grid">
+          <label class="choice" title="Numeric">
+            <input type="radio" name="display-mode" value="numeric" checked>
+            <span class="choice-card"><span aria-hidden="true">123</span><span class="sr-only">Numeric</span></span>
+          </label>
+          <label class="choice" title="Squares">
+            <input type="radio" name="display-mode" value="square">
+            <span class="choice-card"><span aria-hidden="true">■</span><span class="sr-only">Squares</span></span>
+          </label>
+        </div>
+      </div>
+      <div id="theme" class="control-group inline-group"
+           role="radiogroup" aria-labelledby="theme-label">
+        <span id="theme-label">Theme</span>
+        <div class="choice-grid">
+          <label class="choice" title="Dark">
+            <input type="radio" name="theme" value="dark" checked>
+            <span class="choice-card">
+              <span class="theme-preview preview-dark" aria-hidden="true"><i></i><i></i><i></i></span>
+              <span class="sr-only">Dark</span>
+            </span>
+          </label>
+          <label class="choice" title="Light">
+            <input type="radio" name="theme" value="light">
+            <span class="choice-card">
+              <span class="theme-preview preview-light" aria-hidden="true"><i></i><i></i><i></i></span>
+              <span class="sr-only">Light</span>
+            </span>
+          </label>
+        </div>
+      </div>
+      <p id="error-message" class="error-message" role="alert" hidden></p>
+    </section>
 
     <main id="visualizer" aria-label="Conway sequence"></main>
     <footer class="footer">

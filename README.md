@@ -20,6 +20,13 @@ For example:
 
 ![output-onlinegiftools](https://github.com/VydrOz/conway-sequence/assets/61025448/32cacc34-73b5-488a-a48a-5bf65752b169)
 
+## Options
+
+* **Zoom**: 25% to 200%.
+* **Speed**: ×0.25 to ×4, with pause / resume.
+* **Display**: numbers or colored squares.
+* **Theme**: color palette of the page.
+
 ## Extras
 
 This project include `1` easter egg  !
